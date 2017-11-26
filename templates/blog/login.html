@@ -1,12 +1,12 @@
-{%  extends 'blog/layout.html' %}
+{%  extends 'blog/nav.html' %}
+
+{% block title %}Login{% endblock %}
+
 {% block content %}
-<form method='POST'> {% csrf_token %}
-    <div >
-        <label for='username'> Username </label>
-        <input type='text' name='Username' id='username'>
-        <label for='password'>Password </label>
-        <input type='password' name='Password' id='password'>
-        <input type='submit' value='login'>
-    </div>
-</form>
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
 {% endblock %}
